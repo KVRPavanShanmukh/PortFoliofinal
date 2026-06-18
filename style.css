@@ -242,59 +242,6 @@ main {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.hero-socials {
-  margin-top: 32px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.hero-social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--line);
-  color: var(--text-muted);
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.hero-social-link svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-.hero-social-link:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-social-link[title="GitHub"]:hover {
-  color: white;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.hero-social-link[title="LinkedIn"]:hover {
-  color: #0077b5;
-  box-shadow: 0 0 15px rgba(0, 119, 181, 0.2);
-  border-color: rgba(0, 119, 181, 0.4);
-}
-
-.hero-social-link[title="LeetCode"]:hover {
-  color: #ffa116;
-  box-shadow: 0 0 15px rgba(255, 161, 22, 0.2);
-  border-color: rgba(255, 161, 22, 0.4);
-}
-
 /* Advanced Orbit Graphics */
 .hero-orbit {
   position: absolute;
