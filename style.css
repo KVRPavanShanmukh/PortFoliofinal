@@ -13,7 +13,7 @@
   --text: #f5f7ff;
   --text-muted: #8a90a6;
   --line: rgba(255, 255, 255, 0.08);
-  
+
   /* Brand Glow Palettes */
   --blue: #3b82f6;
   --blue-glow: rgba(59, 130, 246, 0.15);
@@ -25,7 +25,7 @@
   --emerald-glow: rgba(16, 185, 129, 0.15);
   --amber: #f59e0b;
   --amber-glow: rgba(245, 158, 11, 0.15);
-  
+
   --gradient-primary: linear-gradient(135deg, var(--blue), var(--purple));
   --gradient-accent: linear-gradient(135deg, var(--cyan), var(--emerald));
   --font-heading: 'Outfit', sans-serif;
@@ -38,7 +38,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: 
+  background:
     radial-gradient(circle at 10% 10%, rgba(59, 130, 246, 0.15), transparent 40%),
     radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.12), transparent 45%),
     radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 40%),
@@ -175,8 +175,15 @@ main {
 }
 
 @keyframes pulse-border {
-  0% { border-color: rgba(16, 185, 129, 0.2); box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.05); }
-  100% { border-color: rgba(16, 185, 129, 0.6); box-shadow: inset 0 0 15px rgba(16, 185, 129, 0.2); }
+  0% {
+    border-color: rgba(16, 185, 129, 0.2);
+    box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.05);
+  }
+
+  100% {
+    border-color: rgba(16, 185, 129, 0.6);
+    box-shadow: inset 0 0 15px rgba(16, 185, 129, 0.2);
+  }
 }
 
 .hero h1 {
@@ -259,7 +266,9 @@ main {
 }
 
 @keyframes rotate-orbit {
-  to { transform: translateY(-50%) rotate(360deg); }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .orbit-card {
@@ -278,19 +287,51 @@ main {
 }
 
 @keyframes counter-rotate-card {
-  to { transform: rotate(-360deg); }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 @keyframes float-card {
-  0%, 100% { margin-top: 0; }
-  50% { margin-top: -10px; }
+
+  0%,
+  100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -10px;
+  }
 }
 
 /* Offset positions for Orbit Cards */
-.card-1 { top: -20px; left: calc(50% - 60px); animation-delay: 0s; border-color: var(--cyan); }
-.card-2 { right: -30px; top: calc(50% - 20px); animation-delay: 1.5s; border-color: var(--purple); }
-.card-3 { bottom: -20px; left: calc(50% - 60px); animation-delay: 3s; border-color: var(--blue); }
-.card-4 { left: -30px; top: calc(50% - 20px); animation-delay: 4.5s; border-color: var(--emerald); }
+.card-1 {
+  top: -20px;
+  left: calc(50% - 60px);
+  animation-delay: 0s;
+  border-color: var(--cyan);
+}
+
+.card-2 {
+  right: -30px;
+  top: calc(50% - 20px);
+  animation-delay: 1.5s;
+  border-color: var(--purple);
+}
+
+.card-3 {
+  bottom: -20px;
+  left: calc(50% - 60px);
+  animation-delay: 3s;
+  border-color: var(--blue);
+}
+
+.card-4 {
+  left: -30px;
+  top: calc(50% - 20px);
+  animation-delay: 4.5s;
+  border-color: var(--emerald);
+}
 
 .orbit-card:hover {
   border-color: white;
@@ -334,7 +375,10 @@ main {
 .stats div::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 3px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
   background: var(--gradient-primary);
   opacity: 0.7;
 }
@@ -461,10 +505,25 @@ main {
   border-radius: 50%;
 }
 
-.cat-lang span { background-color: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
-.cat-fw span { background-color: var(--blue); box-shadow: 0 0 10px var(--blue); }
-.cat-devops span { background-color: var(--purple); box-shadow: 0 0 10px var(--purple); }
-.cat-cs span { background-color: var(--amber); box-shadow: 0 0 10px var(--amber); }
+.cat-lang span {
+  background-color: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+.cat-fw span {
+  background-color: var(--blue);
+  box-shadow: 0 0 10px var(--blue);
+}
+
+.cat-devops span {
+  background-color: var(--purple);
+  box-shadow: 0 0 10px var(--purple);
+}
+
+.cat-cs span {
+  background-color: var(--amber);
+  box-shadow: 0 0 10px var(--amber);
+}
 
 .skills-subgrid {
   display: grid;
@@ -542,6 +601,15 @@ main {
   background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.15), transparent 45%);
   opacity: 0;
   transition: opacity 0.4s;
+}
+
+.project-card::before {
+  pointer-events: none;
+}
+
+.project-card>* {
+  position: relative;
+  z-index: 2;
 }
 
 .project-card:hover::before {
@@ -734,15 +802,34 @@ main {
 
 .profile-card:hover {
   transform: translateY(-4px);
-  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-.profile-card:nth-child(1):hover { box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
-.profile-card:nth-child(2):hover { box-shadow: 0 15px 35px rgba(0, 119, 181, 0.15); border-color: rgba(0, 119, 181, 0.3); }
-.profile-card:nth-child(3):hover { box-shadow: 0 15px 35px rgba(255, 161, 22, 0.15); border-color: rgba(255, 161, 22, 0.3); }
-.profile-card:nth-child(4):hover { box-shadow: 0 15px 35px rgba(208, 155, 105, 0.15); border-color: rgba(208, 155, 105, 0.3); }
-.profile-card:nth-child(5):hover { box-shadow: 0 15px 35px rgba(49, 140, 189, 0.15); border-color: rgba(49, 140, 189, 0.3); }
+.profile-card:nth-child(1):hover {
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-card:nth-child(2):hover {
+  box-shadow: 0 15px 35px rgba(0, 119, 181, 0.15);
+  border-color: rgba(0, 119, 181, 0.3);
+}
+
+.profile-card:nth-child(3):hover {
+  box-shadow: 0 15px 35px rgba(255, 161, 22, 0.15);
+  border-color: rgba(255, 161, 22, 0.3);
+}
+
+.profile-card:nth-child(4):hover {
+  box-shadow: 0 15px 35px rgba(208, 155, 105, 0.15);
+  border-color: rgba(208, 155, 105, 0.3);
+}
+
+.profile-card:nth-child(5):hover {
+  box-shadow: 0 15px 35px rgba(49, 140, 189, 0.15);
+  border-color: rgba(49, 140, 189, 0.3);
+}
 
 .profile-header {
   display: flex;
@@ -922,16 +1009,31 @@ footer a:hover {
     width: 320px;
     height: 320px;
   }
-  
+
   .orbit-card {
     font-size: 12px;
     padding: 8px 14px;
   }
 
-  .card-1 { top: -15px; left: calc(50% - 40px); }
-  .card-2 { right: -20px; top: calc(50% - 15px); }
-  .card-3 { bottom: -15px; left: calc(50% - 40px); }
-  .card-4 { left: -20px; top: calc(50% - 15px); }
+  .card-1 {
+    top: -15px;
+    left: calc(50% - 40px);
+  }
+
+  .card-2 {
+    right: -20px;
+    top: calc(50% - 15px);
+  }
+
+  .card-3 {
+    bottom: -15px;
+    left: calc(50% - 40px);
+  }
+
+  .card-4 {
+    left: -20px;
+    top: calc(50% - 15px);
+  }
 
   .stats {
     grid-template-columns: repeat(2, 1fr);
@@ -965,6 +1067,7 @@ footer a:hover {
   .stats {
     grid-template-columns: 1fr;
   }
+
   .skills-subgrid {
     grid-template-columns: 1fr;
   }
